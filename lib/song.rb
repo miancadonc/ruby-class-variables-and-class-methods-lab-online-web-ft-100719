@@ -1,8 +1,8 @@
 class Song
   attr_accessor :name, :artist, :genre
   @@SONG_HASH = {
-    count: 0
-    artists: []
+    count: 0,
+    artists: [],
     genres: []
   }
   
