@@ -30,9 +30,19 @@ class Song
   def self.genre_count
     genre_count_hash = {}
     @@SONG_HASH[genres].each do |genre|
-      genre_count_hash[:] = 1 if genre_count_hash[genres] == nil
-      
+      genre_count_hash[:"#{genre}"] = 1 if genre_count_hash[genres] == nil
+      genre_count_hash[:"#{genre}"] += 1
     end
+    genre_count_hash
+  end
+  
+   def self.artist_count
+    artist_count_hash = {}
+    @@SONG_HASH[artists].each do |artist|
+      artist_count_hash[:"#{artist}"] = 1 if genre_count_hash[genres] == nil
+      genre_count_hash[:"#{genre}"] += 1
+    end
+    genre_count_hash
   end
   
 end
