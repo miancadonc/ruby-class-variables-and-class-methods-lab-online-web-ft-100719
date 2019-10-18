@@ -16,20 +16,20 @@ class Song
   end
   
   def self.count
-    @@SONG_HASH[count]
+    @@SONG_HASH[@@COUNT]
   end
   
   def self.artists
-    @@SONG_HASH[artists].uniq
+    @@SONG_HASH[@@ARTISTS].uniq
   end
   
   def self.genres
-    @@SONG_HASH[genres].uniq
+    @@SONG_HASH[@@GENRES].uniq
   end
   
   def self.genre_count
     genre_count_hash = {}
-    @@SONG_HASH[genres].each do |genre|
+    @@SONG_HASH[@@GENRES].each do |genre|
       genre_count_hash[:"#{genre}"] = 1 if genre_count_hash[genres] == nil
       genre_count_hash[:"#{genre}"] += 1
     end
@@ -38,7 +38,7 @@ class Song
   
    def self.artist_count
     artist_count_hash = {}
-    @@SONG_HASH[artists].each do |artist|
+    @@SONG_HASH[@@ARTISTS].each do |artist|
       artist_count_hash[:"#{artist}"] = 1 if artist_count_hash[artists] == nil
       artist_count_hash[:"#{artist}"] += 1
     end
